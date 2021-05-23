@@ -1,0 +1,71 @@
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}"/>
+<meta name="application-name" content="{{ .Site.Title }}"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-touch-fullscreen" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+
+<!-- Author & Description & Keywords  -->
+<meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
+
+{{- if .Description -}}
+  <meta name="description" content="{{ .Description | safeHTML }}" />
+{{- else if .IsPage -}}
+  <meta name="description" content="{{ .Summary | plainify }}" />
+{{- else if .Site.Params.description -}}
+  <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+{{- end -}}
+
+{{- if .Keywords -}}
+  {{ $length := len .Keywords | add -1 -}}
+  <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+{{- else if .Site.Params.keywords -}}
+  {{ $length := len .Site.Params.keywords | add -1 -}}
+  <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+{{- end }}
+
+<!-- Baidu & Google Verification  -->
+{{ with .Site.Params.baiduVerification }}<meta name="baidu-site-verification" content="{{.}}" />{{ end }}
+{{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
+
+<!-- Site Generator -->
+<meta name="generator" content="Hugo {{ .Site.Hugo.Version }} with theme Knowing Less" />
+
+<!-- Permalink & RSSlink -->
+<link rel="canonical" href="{{ .Permalink }}" />
+{{- with .OutputFormats.Get "RSS" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{- end -}}
+
+<!-- Favicon and Touch icons -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+<link rel="manifest" href="{{ "manifest.json" | relURL }}">
+<link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | relURL }}" color="#5bbad5">
+
+<!-- Debug -->
+{{- if .Site.Params.debug -}}
+<script src="https://cdn.jsdelivr.net/npm/eruda@1.2.6/eruda.min.js" integrity="sha256-Jmz4bc3kp+rRrXX2tGadNBKFLwtzMapr8kHABxSAAP8=" crossorigin="anonymous"></script>
+<script>eruda.init();</script>
+{{- end -}}
+
+<!-- Style -->
+{{ $style := resources.Get "css/main.css" | toCSS | minify | fingerprint }}
+<link href="{{ $style.RelPermalink }}" rel="stylesheet">
+
+<!-- Font awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+
+<!-- Custom css -->
+{{ range .Site.Params.customCSS -}}
+<link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
+{{ end }}
+
+{{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/google_news.html" . -}}
+{{- template "_internal/schema.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}

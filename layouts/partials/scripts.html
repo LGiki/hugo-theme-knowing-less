@@ -1,0 +1,4 @@
+{{ $main := resources.Get "js/main.js" }}
+{{ $darkMode := resources.Get "js/dark-mode.js" }}
+{{ $js := slice $main $darkMode | resources.Concat "js/main.js" | minify | fingerprint }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}"></script>

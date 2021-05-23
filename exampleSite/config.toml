@@ -1,0 +1,94 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en"
+title = "Knowing Less"
+theme = "knowing-less"
+paginate = 5
+
+[author]                  # essential                     # 必需
+  name = "LGiki"
+
+[params]
+  debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+
+  since = "2021"            # Site creation time          # 站点建立时间
+
+  description = "A Simple HUGO theme for podcasts"
+  keywords = ["podcast"]
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
+
+  baiduVerification = ""   # Baidu Verification
+  googleVerification = ""  # Google Verification         # 谷歌
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  customCSS = []
+  customJS = []
+
+  [[params.links]]
+    title = "RSS"
+    fontAwesomeIcon = "fas fa-rss"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "Apple Podcast"
+    fontAwesomeIcon = "fas fa-podcast"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "Google Podcast"
+    fontAwesomeIcon = "fab fa-google"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "Pocket Casts"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/pocketcasts.svg"
+  [[params.links]]
+    title = "Overcast"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/overcast.svg"
+  [[params.links]]
+    title = "Castro"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/castro.svg"
+  [[params.links]]
+    title = "小宇宙"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/cosmos.svg"
+  [[params.links]]
+    title = "喜马拉雅"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/ximalaya.svg"
+  [[params.links]]
+    title = "网易云"
+    fontAwesomeIcon = ""
+    link = "#"
+    svg = "/icons/netease.svg"
+  [[params.links]]
+    title = "汽水儿"
+    fontAwesomeIcon = "fas fa-headphones-alt"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "皮艇"
+    fontAwesomeIcon = "fas fa-headphones-alt"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "Email"
+    fontAwesomeIcon = "fas fa-envelope"
+    link = "#"
+    svg = ""
+  [[params.links]]
+    title = "微博"
+    fontAwesomeIcon = "fab fa-weibo"
+    link = "#"
+    svg = ""
+  

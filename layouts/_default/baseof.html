@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>
+    {{- block "title" . -}}
+      {{ if .IsPage }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}
+    {{- end -}}
+  </title>
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  <div class="main-container">
+    <aside class="sidebar-container">
+      {{ partial "sidebar.html" . }}
+    </aside>
+    <div class="episode-list-container">
+      {{ block "content" . }}{{ end }}
+    </div>
+  </div>
+
+  <div class="float-button-container">
+    {{ partial "float-button.html" . }}
+  </div>
+
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+  {{ partial "scripts.html" . }}
+</body>
+</html>

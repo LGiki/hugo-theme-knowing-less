@@ -1,0 +1,30 @@
+<div class="sidebar">
+  <a class="podcast-logo" href="#">
+    <!--                <img src="assets/image/logo.png" alt="限时肤浅"/>-->
+    <img src="https://picsum.photos/500/500?1" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
+  </a>
+  <h1 class="podcast-title">{{ .Site.Title }}</h1>
+  <h2 class="podcast-description">
+    {{- if .Description -}}
+      {{ .Description | safeHTML }}
+    {{- else if .Site.Params.description -}}
+      {{ .Site.Params.description | safeHTML }}
+    {{- end -}}
+  </h2>
+  <div class="podcast-link-container">
+    {{- range .Site.Params.links -}}
+      {{- if .link -}}
+        <div class="podcast-link">
+          {{- if .fontAwesomeIcon -}}
+            <a href="{{ .link }}"><i class="link-icon {{ .fontAwesomeIcon }}"></i>{{ .title }}</a>
+          {{- else if .svg -}}
+            <a href="{{ .link }}"><img class="link-icon" src="{{ .svg }}" width="16" height="16"
+            alt="{{ .title }}" />{{ .title }}</a>
+          {{- end -}}
+        </div>
+      {{- end -}}
+    {{- end -}}
+    <div class="podcast-link"><a href="#"><i class="link-icon fab fa-weixin"></i>公众号</a>
+    </div>
+  </div>
+</div>
