@@ -27,9 +27,9 @@
         {{- $ellipsed = true -}}
       {{- end -}}
       {{- if $showNumber }}
-        <a href="{{ .URL }}" {{ if eq . $paginator }}class="pagination-active"{{ end }}>{{ .PageNumber }}</a>
+        <a {{ if ne . $paginator }}href="{{ .URL }}"{{ end }} {{ if eq . $paginator }}class="pagination-active default-pointer"{{ end }}>{{ .PageNumber }}</a>
       {{- else if $shouldEllipse }}
-        <a class="pagination-ellipsis">&hellip;</a>
+        <a class="default-pointer">&hellip;</a>
       {{- end -}}
     {{- end -}}
     {{- if $paginator.HasNext -}}

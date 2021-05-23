@@ -268,7 +268,7 @@ img.link-icon[data-theme="dark"] {
     background-color: var(--color-pagination-hover-background);
 }
 
-.pagination-ellipsis {
+.default-pointer {
     cursor: default;
     pointer-events: none;
 }
