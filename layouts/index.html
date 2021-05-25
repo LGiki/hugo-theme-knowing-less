@@ -1,42 +1,43 @@
 {{ define "content" }}
-  {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "episode") ".Params.hiddenfromhomepage" "!=" true) }}
-  {{- range $paginator.Pages -}}
-    {{ .Render "summary" }}
-  {{- end -}}
-
-  <!-- Pagination -->
-  <div class="pagination-container">
-    {{- if ne $paginator.First.PageNumber $paginator.PageNumber -}}
-      <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></i></a>
+  <div class="main-content-container">
+    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "episode") ".Params.hiddenfromhomepage" "!=" true) }}
+    {{- range $paginator.Pages -}}
+      {{ .Render "summary" }}
     {{- end -}}
-    {{- if $paginator.HasPrev -}}
-      <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></i></a>
-    {{- end -}}
-    {{- $ellipsed := false -}}
-    {{- $shouldEllipse := false -}}
-    {{- range $paginator.Pagers -}}
-      {{- $right := sub .TotalPages .PageNumber -}}
-      {{- $showNumber := or (le .PageNumber 3) (eq $right 0) -}}
-      {{- $showNumber := or $showNumber (le .TotalPages 5) -}}
-      {{- $showNumber := or $showNumber (and (gt .PageNumber (sub $paginator.PageNumber 2)) (lt .PageNumber (add $paginator.PageNumber 2))) -}}
-      {{- if $showNumber -}}
-        {{- $ellipsed = false -}}
-        {{- $shouldEllipse = false -}}
-      {{- else -}}
-        {{- $shouldEllipse = not $ellipsed -}}
-        {{- $ellipsed = true -}}
+    <!-- Pagination -->
+    <div class="pagination-container">
+      {{- if ne $paginator.First.PageNumber $paginator.PageNumber -}}
+        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></i></a>
       {{- end -}}
-      {{- if $showNumber }}
-        <a {{ if ne . $paginator }}href="{{ .URL }}"{{ end }} {{ if eq . $paginator }}class="pagination-active default-pointer"{{ end }}>{{ .PageNumber }}</a>
-      {{- else if $shouldEllipse }}
-        <a class="default-pointer">&hellip;</a>
+      {{- if $paginator.HasPrev -}}
+        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></i></a>
       {{- end -}}
-    {{- end -}}
-    {{- if $paginator.HasNext -}}
-      <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
-    {{- end -}}
-    {{- if ne $paginator.Last.PageNumber $paginator.PageNumber -}}
-      <a href="{{ $paginator.Last.URL }}"><i class="fas fa-angle-double-right"></i></a>
-    {{- end -}}
+      {{- $ellipsed := false -}}
+      {{- $shouldEllipse := false -}}
+      {{- range $paginator.Pagers -}}
+        {{- $right := sub .TotalPages .PageNumber -}}
+        {{- $showNumber := or (le .PageNumber 3) (eq $right 0) -}}
+        {{- $showNumber := or $showNumber (le .TotalPages 5) -}}
+        {{- $showNumber := or $showNumber (and (gt .PageNumber (sub $paginator.PageNumber 2)) (lt .PageNumber (add $paginator.PageNumber 2))) -}}
+        {{- if $showNumber -}}
+          {{- $ellipsed = false -}}
+          {{- $shouldEllipse = false -}}
+        {{- else -}}
+          {{- $shouldEllipse = not $ellipsed -}}
+          {{- $ellipsed = true -}}
+        {{- end -}}
+        {{- if $showNumber }}
+          <a {{ if ne . $paginator }}href="{{ .URL }}"{{ end }} {{ if eq . $paginator }}class="pagination-active default-pointer"{{ end }}>{{ .PageNumber }}</a>
+        {{- else if $shouldEllipse }}
+          <a class="default-pointer">&hellip;</a>
+        {{- end -}}
+      {{- end -}}
+      {{- if $paginator.HasNext -}}
+        <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
+      {{- end -}}
+      {{- if ne $paginator.Last.PageNumber $paginator.PageNumber -}}
+        <a href="{{ $paginator.Last.URL }}"><i class="fas fa-angle-double-right"></i></a>
+      {{- end -}}
+    </div>
   </div>
 {{ end }}

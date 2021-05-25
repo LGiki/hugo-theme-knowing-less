@@ -16,9 +16,7 @@
     <aside class="sidebar-container">
       {{ partial "sidebar.html" . }}
     </aside>
-    <div class="episode-list-container">
-      {{ block "content" . }}{{ end }}
-    </div>
+    {{ block "content" . }}{{ end }}
   </div>
 
   <div class="float-button-container">

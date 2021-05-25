@@ -20,7 +20,7 @@ const toggleDarkMode = () => {
     updateDarkToggleButton();
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     updateDarkToggleButton();
     document.querySelector('#dark-mode-toggle').style.display = "block";
     document.querySelector('#dark-mode-toggle').className = 'float-button show';

@@ -1,27 +1,43 @@
 <div class="episode-item">
   <div class="episode-info">
-      <div class="episode-title">
-          <a href="{{ .RelPermalink }}"><h1>{{ .Title }}</h1></a>
+    <div>
+      <a href="{{ .RelPermalink }}">
+        <h1 class="episode-title">{{ .Title }}</h1>
+      </a>
+    </div>
+    <div class="episode-extra-info">
+      <div class="episode-tag" title="{{ .Date.Format (.Site.Params.dateFormatToUse | default " 2006-01-02") }}">
+        <div class="tag-icon publish-date-icon">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
       </div>
-      <div class="episode-extra-info">
-          <div class="episode-tag" title="{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}">
-              <div class="tag-icon">
-                  <i class="far fa-calendar-alt"></i>
-              </div>
-              <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
-          </div>
-          <div class="episode-tag" title="26:26">
-              <div class="tag-icon duration-icon">
-                  <i class="fas fa-microphone"></i>
-              </div>
-              <span>12:34</span>
-          </div>
+      <div class="episode-tag" title="26:26">
+        <div class="tag-icon duration-icon">
+          <i class="fas fa-microphone"></i>
+        </div>
+        <span>26:26</span>
       </div>
-      <div class="episode-summary" title="{{ .Summary }}">{{ .Summary }}</div>
+      {{ with .Params.categories -}}
+      {{ range . -}}
+      <div class="episode-tag" title="{{ . }}">
+        <div class="tag-icon hashtag-icon">
+          <i class="fas fa-hashtag"></i>
+        </div>
+        <span>
+          <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+          {{ . }}
+          </a>
+        </span>
+      </div>
+      {{ end -}}
+      {{- end }}
+    </div>
+    <div class="episode-summary" title="{{ .Summary }}">{{ .Summary }}</div>
   </div>
   <div class="episode-cover-container">
-      <a href="#">
-          <img class="episode-cover" src="https://picsum.photos/500/500"/>
-      </a>
+    <a href="#">
+      <img class="episode-cover" src="https://picsum.photos/500/500" />
+    </a>
   </div>
 </div>
