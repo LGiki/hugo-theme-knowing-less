@@ -425,6 +425,10 @@ footer {
     transform: translateX(-5px);
 }
 
+.episode-nav-mobile {
+    display: none;
+}
+
 .episode-nav-next {
     /*cursor: pointer;*/
     float: right;
@@ -460,6 +464,14 @@ footer {
 
     .episode-container {
         padding: 5px 15px;
+    }
+
+    .episode-nav-default {
+        display: none;
+    }
+
+    .episode-nav-mobile {
+        display: unset;
     }
 }
 

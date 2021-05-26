@@ -40,10 +40,12 @@
     </div>
     <div class="episode-footer">
         {{ with .PrevInSection -}}
-        <div class="episode-nav-prev"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i class="fas fa-chevron-left"></i>Prev</a></div>
+        <div class="episode-nav-prev episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i class="fas fa-chevron-left"></i>{{ .Title }}</a></div>
+        <div class="episode-nav-prev episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i class="fas fa-chevron-left"></i>Prev</a></div>
         {{- end }}
         {{ with .NextInSection -}}
-        <div class="episode-nav-next"><a href="{{ .RelPermalink }}" title="{{ .Title }}">Next<i class="fas fa-chevron-right"></i></a></div>
+        <div class="episode-nav-next episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}<i class="fas fa-chevron-right"></i></a></div>
+        <div class="episode-nav-next episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}">Next<i class="fas fa-chevron-right"></i></a></div>
         {{- end }}
     </div>
 </div>
