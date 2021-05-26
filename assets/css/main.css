@@ -92,7 +92,7 @@ img.link-icon[data-theme="dark"] {
 
 .main-content-container {
     flex-grow: 1;
-    padding: 20px 20px 0 10px;
+    padding: 20px 20px 10px 15px;
     overflow: hidden;
 }
 
@@ -505,8 +505,7 @@ footer {
     }
 
     .episode-player .shk .shk-player {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-radius: 10px 10px 0 0;
     }
 
     .episode-content {
