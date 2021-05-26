@@ -363,7 +363,7 @@ footer {
     margin-top: 15px;
 }
 
-.episode-content p, h1, h2, h3, h4, h5, h6, li {
+.episode-content p, .episode-content h1, .episode-content h2, .episode-content h3, .episode-content h4, .episode-content h5, .episode-content h6, .episode-content li {
     color: var(--color-episode-content-text) !important;
     transition: color .3s ease-in-out;
 }
