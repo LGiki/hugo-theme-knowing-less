@@ -1,68 +1,6 @@
 @import '_color';
 @import '_markdown';
 
-:root {
-    --color-background: var(--color-gary-50);
-    --color-podcast-title: var(--color-gary-700);
-    --color-podcast-description: var(--color-gary-400);
-    --color-podcast-link-background: var(--color-gary-100);
-    --color-podcast-link-hover-background: var(--color-gary-300);
-    --color-episode-item: var(--color-white);
-    --color-episode-tag-text: var(--color-gary-500);
-    --color-episode-tag-icon-background: var(--color-blue-500);
-    --color-episode-tag-span-background: var(--color-gary-100);
-    --color-episode-title: var(--color-gary-700);
-    --color-episode-title-hover: var(--color-gary-500);
-    --color-episode-summary: var(--color-gary-500);
-    --color-pagination-text: var(--color-gary-600);
-    --color-pagination-background: var(--color-white);
-    --color-pagination-hover-background: var(--color-blue-100);
-    --color-pagination-active-text: var(--color-white);
-    --color-pagination-active-background: var(--color-blue-500);
-    --color-footer-text: var(--color-gary-700);
-    --color-duration-icon-background: var(--color-pink-400);
-    --color-podcast-link: var(--color-black);
-    --color-episode-container: var(--color-white);
-    --color-hashtag-tag-icon-background: var(--color-gary-400);
-    --color-shk-player-body: var(--color-white);
-    --color-shk-player-text: #767676;
-    --color-shk-player-disabled: rgba(0, 0, 0, .1);
-    --color-shk-player-primary: var(--color-blue-500);
-    --color-episode-footer: var(--color-gary-700);
-    --color-episode-footer-hover: var(--color-blue-400);
-}
-
-:root[data-theme="dark"] {
-    --color-background: var(--color-gary-800);
-    --color-podcast-title: var(--color-gary-100);
-    --color-podcast-description: var(--color-gary-300);
-    --color-podcast-link-background: var(--color-gary-700);
-    --color-podcast-link-hover-background: var(--color-gary-600);
-    --color-podcast-link: var(--color-gary-300);
-    --color-episode-item: var(--color-gary-700);
-    --color-episode-title: var(--color-gary-400);
-    --color-episode-summary: var(--color-gary-400);
-    --color-footer-text: var(--color-gary-300);
-    --color-episode-tag-text: var(--color-gary-200);
-    --color-episode-tag-icon-background: var(--color-blue-600);
-    --color-episode-tag-span-background: var(--color-gary-600);
-    --color-pagination-text: var(--color-gary-100);
-    --color-pagination-background: var(--color-gary-600);
-    --color-pagination-active-background: var(--color-blue-600);
-    --color-pagination-hover-background: var(--color-blue-800);
-    --color-duration-icon-background: var(--color-pink-600);
-    --color-episode-container: var(--color-gary-700);
-    --color-hashtag-tag-icon-background: var(--color-gary-500);
-    --color-episode-content-text: var(--color-gary-400);
-    --color-shk-player-body: var(--color-gary-600);
-    --color-shk-player-text: var(--color-gary-300);
-    --color-shk-player-disabled: var(--color-gary-500);
-    --color-shk-player-primary: var(--color-blue-200);
-    --color-episode-footer: var(--color-gary-300);
-    --color-episode-footer-hover: var(--color-blue-300);
-}
-
-
 html, body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
@@ -81,13 +19,13 @@ body {
 }
 
 .sidebar-container {
-    flex-basis: 350px;
+    flex-basis: 320px;
     flex-shrink: 0;
     padding-right: 5px;
 }
 
 .sidebar {
-    padding: 20px 30px;
+    padding: 25px 20px 0 20px;
     position: sticky;
     top: 0;
 }
@@ -154,7 +92,7 @@ img.link-icon[data-theme="dark"] {
 
 .main-content-container {
     flex-grow: 1;
-    padding: 20px 20px 0 0;
+    padding: 20px 20px 0 10px;
     overflow: hidden;
 }
 
@@ -425,7 +363,7 @@ footer {
     margin-top: 15px;
 }
 
-.episode-content p {
+.episode-content p, h1, h2, h3, h4, h5, h6, li {
     color: var(--color-episode-content-text) !important;
     transition: color .3s ease-in-out;
 }
