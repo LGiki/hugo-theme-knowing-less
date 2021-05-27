@@ -114,6 +114,7 @@
     --color-episode-footer: var(--color-gary-700);
     --color-episode-footer-hover: var(--color-blue-400);
     --color-border-secondary: #eaecef;
+    --color-archive-episode-border-left: var(--color-gary-200);
 }
 
 :root[data-theme="dark"] {
@@ -145,4 +146,5 @@
     --color-episode-footer: var(--color-gary-300);
     --color-episode-footer-hover: var(--color-blue-300);
     --color-border-secondary: var(--color-gary-600);
+    --color-archive-episode-border-left: var(--color-gary-500);
 }
