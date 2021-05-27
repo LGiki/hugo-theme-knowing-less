@@ -47,7 +47,9 @@
         {{ end -}}
         {{- end }}
       </div>
-      <div class="episode-player"></div>
+      {{ if .Params.enclosureSrc }}
+        <div class="episode-player"></div>
+      {{ end }}
     </div>
     <div class="episode-content markdown-content" id="light-gallery-div">
       {{ with .Params.coverImage -}}
@@ -73,22 +75,33 @@
 </div>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    const player = new Shikwasa({
-      container: () => document.querySelector('.episode-player'),
-      audio: {
-        title: 'Hello World!',
-        artist: 'Shikwasa FM',
-        cover: 'https://picsum.photos/500/500?cover',
-        // src: 'https://jt.ximalaya.com//CKwRIDoEd_NyAd9pEgCsTipO.m4a?channel=rss&amp;album_id=41317943&amp;track_id=416020026&amp;uid=197100155&amp;jt=http://audio.xmcdn.com/storages/e79d-audiofreehighqps/FC/51/CKwRIDoEd_NyAd9pEgCsTipO.m4a',
-        src: 'a.mp3',
-        preload: 'metadata'
-      },
-      speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
-    });
+    {{ if .Params.enclosureSrc }}
+      const player = new Shikwasa({
+        container: () => document.querySelector('.episode-player'),
+        audio: {
+          title: '{{ .Title }}',
+          {{ if .Params.author }}
+            artist: '{{ .Params.author }}',
+          {{ else if .Site.Author.name }}
+            artist: '{{ .Site.Author.name }}',
+          {{ else }}
+            artist: '{{ .Site.Title }}',
+          {{ end }}
+          {{ if .Params.coverImage -}}
+            cover: '{{ .Params.coverImage }}',
+          {{ else }}
+            cover: '{{ .Site.Params.podcastImage }}',
+          {{- end }}
+          src: '{{ .Params.enclosureSrc }}',
+          preload: 'metadata'
+        },
+        speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
+      });
+    {{ end }}
     lightGallery(document.getElementById('light-gallery-div'), {
       selector: 'img',
       plugins: [lgZoom, lgRotate],
-  });
+    });
   });
 </script>
 {{ end }}

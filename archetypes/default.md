@@ -8,6 +8,8 @@ tags: []
 categories: []
 description: ""
 coverImage: ""
+enclosureSrc: ""
+author: ""
 duration: 0
 hiddenFromHomePage: false
 ---
