@@ -13,11 +13,11 @@ prevPage:
 nextPage:
   other: "下一頁"
 
-prevPost:
-  other: "上一篇"
+prevEpisode:
+  other: "上一期"
 
-nextPost:
-  other: "下一篇"
+nextEpisode:
+  other: "下一期"
 
 unknown:
   other: "未知"
