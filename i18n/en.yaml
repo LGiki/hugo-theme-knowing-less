@@ -1,0 +1,23 @@
+archive:
+  other: "Archive"
+
+tags:
+  other: "Tags"
+
+categories:
+  other: "Categories"
+
+prevPage:
+  other: "Prev"
+
+nextPage:
+  other: "Next"
+
+prevPost:
+  other: "Next"
+
+nextPost:
+  other: "下一篇"
+
+unknown:
+  other: "Unknown"

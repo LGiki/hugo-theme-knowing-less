@@ -1,0 +1,23 @@
+archive:
+  other: "歸檔"
+
+tags:
+  other: "標簽"
+
+categories:
+  other: "分類"
+
+prevPage:
+  other: "上一頁"
+
+nextPage:
+  other: "下一頁"
+
+prevPost:
+  other: "上一篇"
+
+nextPost:
+  other: "下一篇"
+
+unknown:
+  other: "未知"
