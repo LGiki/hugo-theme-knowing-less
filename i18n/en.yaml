@@ -19,5 +19,5 @@ prevEpisode:
 nextEpisode:
   other: "Next"
 
-unknown:
+unknownDuration:
   other: "Unknown"

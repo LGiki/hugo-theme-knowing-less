@@ -19,5 +19,5 @@ prevEpisode:
 nextEpisode:
   other: "下一期"
 
-unknown:
+unknownDuration:
   other: "未知"
