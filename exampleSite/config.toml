@@ -1,14 +1,20 @@
 baseURL = "http://localhost:1313/"
 languageCode = "en"
+DefaultContentLanguage = "en"
 title = "Knowing Less"
 theme = "knowing-less"
 paginate = 5
+enableEmoji = true
+summaryLength = 200
+hasCJKLanguage = true
 
 [author]                  # essential                     # 必需
   name = "LGiki"
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+
+  podcastImage = "https://picsum.photos/500/500"
 
   since = "2021"            # Site creation time          # 站点建立时间
 
@@ -92,3 +98,7 @@ paginate = 5
     link = "#"
     svg = ""
   
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
