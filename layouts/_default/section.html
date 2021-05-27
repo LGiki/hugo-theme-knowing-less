@@ -1,0 +1,93 @@
+{{- define "title" }}{{ T "archive" }} · {{ .Site.Title }}{{ end -}}
+
+{{- define "content" }}
+{{- $paginator := .Paginate .Data.Pages.ByDate.Reverse .Site.Params.archivePaginate }}
+<div class="main-content-container">
+  <div class="episode-container">
+    <div class="archive-container" id="light-gallery-div">
+      {{- range $index, $element := $paginator.Pages -}}
+      {{- $thisMonth := $element.Date.Format "2006.01" }}
+      {{- $lastElement := $index | add -1 | index $paginator.Pages }}
+      {{- if or (eq $index 0) ( ne ($lastElement.Date.Format "2006.01") $thisMonth ) }}
+      <h2 class="archive-month">{{ $thisMonth }}</h2>
+      {{- end }}
+
+      <div class="archive-episode-container">
+        {{ if .Params.coverImage -}}
+        <img class="archive-episode-cover" src="{{ .Params.coverImage }}">
+        {{ else }}
+        <img class="archive-episode-cover" src="{{ .Site.Params.podcastImage }}">
+        {{- end }}
+        <div class="archive-episode-info">
+          <span class="archive-episode-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+          <div class="archive-episode-tag">
+            <div class="episode-tag" title="{{ .Date.Format " 2006-01-02 15:02:01" }}">
+              <div class="tag-icon publish-date-icon">
+                <i class="far fa-calendar-alt"></i>
+              </div>
+              <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
+            </div>
+            <div class="episode-tag">
+              <div class="tag-icon duration-icon">
+                <i class="fas fa-microphone"></i>
+              </div>
+              {{ if .Params.duration }}
+              {{ $durationType := printf "%T" .Params.duration }}
+              {{ if eq $durationType "string" }}
+              <span>{{ .Params.duration }}</span>
+              {{ else }}
+              {{ $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) }}
+              {{ $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) }}
+              {{ $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
+              {{ if eq $hour "00" }}
+              <span>{{ $minute }}:{{ $second }}</span>
+              {{ else }}
+              <span>{{ $hour }}:{{ $minute }}:{{ $second }}</span>
+              {{ end }}
+              {{ end }}
+              {{ else }}
+              <span>{{ T "unknownDuration" }}</span>
+              {{ end }}
+            </div>
+            {{ with .Params.categories -}}
+            {{ range . -}}
+            <div class="episode-tag" title="{{ . }}">
+              <div class="tag-icon hashtag-icon">
+                <i class="fas fa-hashtag"></i>
+              </div>
+              <span>
+                <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+                  {{ . }}
+                </a>
+              </span>
+            </div>
+            {{ end -}}
+            {{- end }}
+          </div>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+
+
+  <div class="episode-footer">
+    {{ with $paginator.Prev -}}
+    <div class="episode-nav-prev"><a href="{{ .URL }}"><i class="fas fa-chevron-left"></i>Prev</a>
+    </div>
+    {{- end }}
+    {{ with $paginator.Next -}}
+    <div class="episode-nav-next"><a href="{{ .URL }}">Next<i class="fas fa-chevron-right"></i></a>
+    </div>
+    {{- end }}
+  </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    lightGallery(document.getElementById('light-gallery-div'), {
+      selector: 'img',
+      plugins: [lgZoom, lgRotate],
+    });
+  });
+</script>
+{{- end }}
