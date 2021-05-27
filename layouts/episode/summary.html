@@ -6,17 +6,33 @@
       </a>
     </div>
     <div class="episode-extra-info">
-      <div class="episode-tag" title="{{ .Date.Format (.Site.Params.dateFormatToUse | default " 2006-01-02") }}">
+      <div class="episode-tag" title="{{ .Date.Format "2006-01-02 15:02:01" }}">
         <div class="tag-icon publish-date-icon">
           <i class="far fa-calendar-alt"></i>
         </div>
         <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
       </div>
-      <div class="episode-tag" title="26:26">
+      <div class="episode-tag">
         <div class="tag-icon duration-icon">
           <i class="fas fa-microphone"></i>
         </div>
-        <span>26:26</span>
+        {{ if .Params.duration }}
+          {{ $durationType := printf "%T" .Params.duration }}
+          {{ if eq $durationType "string" }}
+            <span>{{ .Params.duration }}</span>
+          {{ else }}
+            {{ $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) }}
+            {{ $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) }}
+            {{ $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
+            {{ if eq $hour "00" }}
+              <span>{{ $minute }}:{{ $second }}</span>
+            {{ else }}
+              <span>{{ $hour }}:{{ $minute }}:{{ $second }}</span>
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          <span>{{ T "unknownDuration" }}</span>
+        {{ end }}
       </div>
       {{ with .Params.categories -}}
       {{ range . -}}
@@ -33,11 +49,13 @@
       {{ end -}}
       {{- end }}
     </div>
-    <div class="episode-summary episode-content" title="{{ .Summary }}">{{ .Summary }}</div>
+    <div class="episode-summary markdown-content" title="{{ .Summary }}">{{ .Summary }}</div>
   </div>
-  <div class="episode-cover-container">
-    <a href="#">
-      <img class="episode-cover" src="https://picsum.photos/500/500" />
-    </a>
-  </div>
+  {{ if .Params.coverImage -}}
+    <div class="episode-cover-container">
+      <a href="{{ .RelPermalink }}">
+        <img class="episode-cover" src="{{ .Params.coverImage }}" />
+      </a>
+    </div>
+  {{- end }}
 </div>

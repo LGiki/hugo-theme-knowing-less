@@ -1,68 +1,94 @@
 {{ define "content" }}
 <div class="main-content-container">
-    <div class="episode-container">
-        <div class="episode-info">
-            <h1 class="episode-title">{{ .Title }}</h1>
-            <div class="episode-extra-info">
-                <div class="episode-tag" title="{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}">
-                    <div class="tag-icon publish-date-icon">
-                        <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
-                </div>
-                <div class="episode-tag" title="26:26">
-                    <div class="tag-icon duration-icon">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <span>26:26</span>
-                </div>
-                {{ with .Params.categories -}}
-                {{ range . -}}
-                <div class="episode-tag" title="{{ . }}">
-                    <div class="tag-icon hashtag-icon">
-                    <i class="fas fa-hashtag"></i>
-                    </div>
-                    <span>
-                    <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
-                    {{ . }}
-                    </a>
-                    </span>
-                </div>
-                {{ end -}}
-                {{- end }}
-            </div>
-            <div class="episode-player"></div>
+  <div class="episode-container">
+    <div class="episode-info">
+      <h1 class="episode-title">{{ .Title }}</h1>
+      <div class="episode-extra-info">
+        <div class="episode-tag" title="{{ .Date.Format " 2006-01-02 15:02:01" }}">
+          <div class="tag-icon publish-date-icon">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+          <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
         </div>
-        <div class="episode-content">
-            <img class="episode-content-cover" src="https://picsum.photos/500/500">
-            {{ .Content }}
+        <div class="episode-tag">
+          <div class="tag-icon duration-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          {{ if .Params.duration }}
+            {{ $durationType := printf "%T" .Params.duration }}
+            {{ if eq $durationType "string" }}
+              <span>{{ .Params.duration }}</span>
+            {{ else }}
+              {{ $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) }}
+              {{ $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) }}
+              {{ $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
+              {{ if eq $hour "00" }}
+                <span>{{ $minute }}:{{ $second }}</span>
+              {{ else }}
+                <span>{{ $hour }}:{{ $minute }}:{{ $second }}</span>
+              {{ end }}
+            {{ end }}
+          {{ else }}
+            <span>{{ T "unknownDuration" }}</span>
+          {{ end }}
         </div>
-    </div>
-    <div class="episode-footer">
-        {{ with .PrevInSection -}}
-        <div class="episode-nav-prev episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i class="fas fa-chevron-left"></i>{{ .Title }}</a></div>
-        <div class="episode-nav-prev episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i class="fas fa-chevron-left"></i>Prev</a></div>
+        {{ with .Params.categories -}}
+        {{ range . -}}
+        <div class="episode-tag" title="{{ . }}">
+          <div class="tag-icon hashtag-icon">
+            <i class="fas fa-hashtag"></i>
+          </div>
+          <span>
+            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+              {{ . }}
+            </a>
+          </span>
+        </div>
+        {{ end -}}
         {{- end }}
-        {{ with .NextInSection -}}
-        <div class="episode-nav-next episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}<i class="fas fa-chevron-right"></i></a></div>
-        <div class="episode-nav-next episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}">Next<i class="fas fa-chevron-right"></i></a></div>
-        {{- end }}
+      </div>
+      <div class="episode-player"></div>
     </div>
+    <div class="episode-content markdown-content" id="light-gallery-div">
+      {{ with .Params.coverImage -}}
+      <img class="episode-content-cover" src="{{ . }}">
+      {{- end }}
+      {{ .Content }}
+    </div>
+  </div>
+  <div class="episode-footer">
+    {{ with .PrevInSection -}}
+    <div class="episode-nav-prev episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i
+          class="fas fa-chevron-left"></i>{{ .Title }}</a></div>
+    <div class="episode-nav-prev episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i
+          class="fas fa-chevron-left"></i>{{ T "prevEpisode" }}</a></div>
+    {{- end }}
+    {{ with .NextInSection -}}
+    <div class="episode-nav-next episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}<i
+          class="fas fa-chevron-right"></i></a></div>
+    <div class="episode-nav-next episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ T
+        "nextEpisode" }}<i class="fas fa-chevron-right"></i></a></div>
+    {{- end }}
+  </div>
 </div>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const player = new Shikwasa({
-            container: () => document.querySelector('.episode-player'),
-            audio: {
-                title: 'Hello World!',
-                artist: 'Shikwasa FM',
-                cover: 'https://picsum.photos/500/500?cover',
-                // src: 'https://jt.ximalaya.com//CKwRIDoEd_NyAd9pEgCsTipO.m4a?channel=rss&amp;album_id=41317943&amp;track_id=416020026&amp;uid=197100155&amp;jt=http://audio.xmcdn.com/storages/e79d-audiofreehighqps/FC/51/CKwRIDoEd_NyAd9pEgCsTipO.m4a',
-                src: 'a.mp3',
-                preload: 'metadata'
-            },
-            speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
-        });
+  window.addEventListener('DOMContentLoaded', () => {
+    const player = new Shikwasa({
+      container: () => document.querySelector('.episode-player'),
+      audio: {
+        title: 'Hello World!',
+        artist: 'Shikwasa FM',
+        cover: 'https://picsum.photos/500/500?cover',
+        // src: 'https://jt.ximalaya.com//CKwRIDoEd_NyAd9pEgCsTipO.m4a?channel=rss&amp;album_id=41317943&amp;track_id=416020026&amp;uid=197100155&amp;jt=http://audio.xmcdn.com/storages/e79d-audiofreehighqps/FC/51/CKwRIDoEd_NyAd9pEgCsTipO.m4a',
+        src: 'a.mp3',
+        preload: 'metadata'
+      },
+      speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
     });
+    lightGallery(document.getElementById('light-gallery-div'), {
+      selector: 'img',
+      plugins: [lgZoom, lgRotate],
+  });
+  });
 </script>
 {{ end }}
