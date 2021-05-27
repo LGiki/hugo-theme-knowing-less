@@ -1,7 +1,6 @@
 <div class="sidebar">
   <a class="podcast-logo" href="{{ "/" | relLangURL }}">
-    <!--                <img src="assets/image/logo.png" alt="限时肤浅"/>-->
-    <img src="https://picsum.photos/500/500?1" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
+    <img src="{{ .Site.Params.podcastImage }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
   </a>
   <h1 class="podcast-title">{{ .Site.Title }}</h1>
   <h2 class="podcast-description">
