@@ -588,7 +588,7 @@ footer {
     }
 
     .episode-content {
-        margin: 0;
+        margin-top: 10px;
     }
 
     .episode-content-cover {
