@@ -17,9 +17,6 @@
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        hljs.configure({
-            
-        });
         document.querySelectorAll('pre code').forEach(el => {
             hljs.highlightBlock(el);
         });
