@@ -21,3 +21,21 @@ nextEpisode:
 
 unknownDuration:
   other: "未知"
+
+archiveCounter:
+  one: "共計 {{ .Count }} 期節目"
+  other: "共計 {{ .Count }} 期節目"
+
+tagCounter:
+  one: "共計 {{ .Count }} 個標籤"
+  other: "共計 {{ .Count }} 個標籤"
+
+zeroTagCounter:
+  other: "暫無標籤"
+
+categoryCounter:
+  one: "共計 {{ .Count }} 個分類"
+  other: "共計 {{ .Count }} 個分類"
+
+zeroCategoryCounter:
+  other: "暫無分類"

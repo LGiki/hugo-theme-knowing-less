@@ -21,3 +21,21 @@ nextEpisode:
 
 unknownDuration:
   other: "Unknown"
+
+archiveCounter:
+  one: "{{ .Count }} Episode In Total"
+  other: "{{ .Count }} Episodes In Total"
+
+tagCounter:
+  one: "{{ .Count }} Tag In Total"
+  other: "{{ .Count }} Tags In Total"
+
+zeroTagCounter:
+  other: "No tags"
+
+categoryCounter:
+  one: "{{ .Count }} Category In Total"
+  other: "{{ .Count }} Categories In Total"
+
+zeroCategoryCounter:
+  other: "No categories"
