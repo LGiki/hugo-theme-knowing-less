@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <a class="podcast-logo" href="{{ "/" | relLangURL }}">
+  <a class="podcast-logo" href="{{ " /" | relLangURL }}">
     <img src="{{ .Site.Params.podcastImage }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
   </a>
   <h1 class="podcast-title">{{ .Site.Title }}</h1>
@@ -15,15 +15,27 @@
       {{- if .link -}}
         <div class="podcast-link">
           {{- if .fontAwesomeIcon -}}
-            <a href="{{ .link }}"><i class="link-icon {{ .fontAwesomeIcon }}"></i>{{ .title }}</a>
+          <a href="{{ .link }}"><i class="link-icon {{ .fontAwesomeIcon }}"></i>{{ .title }}</a>
           {{- else if .svg -}}
-            <a href="{{ .link }}"><img class="link-icon" src="{{ .svg }}" width="16" height="16"
-            alt="{{ .title }}" />{{ .title }}</a>
+          <a href="{{ .link }}"><img class="link-icon" src="{{ .svg }}" width="16" height="16" alt="{{ .title }}" />{{
+            .title }}</a>
           {{- end -}}
         </div>
       {{- end -}}
     {{- end -}}
-    <div class="podcast-link"><a href="#"><i class="link-icon fab fa-weixin"></i>公众号</a>
-    </div>
+    {{ with .Site.Params.wechatQRCode }}
+      <div class="wechat-qrcode-container">
+        <div class="podcast-link wechat-qrcode-link">
+          <a>
+            <i class="link-icon fab fa-weixin"></i>
+            公众号
+          </a>
+        </div>
+        <div class="wechat-qrcode">
+          <img src="{{ . }}" />
+          <span>微信扫描二维码</span>
+        </div>
+      </div>
+    {{ end }}
   </div>
 </div>

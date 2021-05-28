@@ -32,6 +32,13 @@ hasCJKLanguage = true
   customCSS = []
   customJS = []
 
+  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
+  archivePaginate = 20
+  showArchiveCount = true
+  
+  # WeChat Official Code QR Code Image
+  weChatQRCode = ""
+
   [[params.links]]
     title = "RSS"
     fontAwesomeIcon = "fas fa-rss"

@@ -475,7 +475,7 @@ footer {
 .archive-episode-container {
     display: flex;
     margin: 10px 0;
-    padding-left: .9rem;
+    padding-left: 0.9rem;
     border-left: 5px solid var(--color-archive-episode-border-left);
 }
 
@@ -523,6 +523,47 @@ footer {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+}
+
+.wechat-qrcode-container {
+    position: relative;
+}
+
+.wechat-qrcode {
+    position: absolute;
+    left: -15%;
+    bottom: 40px;
+    opacity: 0;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0.6px 3.8px rgba(0, 0, 0, 0.105), 0 5px 30px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    display: flex;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
+.wechat-qrcode-link {
+    cursor: pointer;
+}
+
+.wechat-qrcode-link:hover + .wechat-qrcode {
+    opacity: 1 !important;
+    visibility: visible;
+}
+
+.wechat-qrcode img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.wechat-qrcode span {
+    font-size: 0.5rem;
 }
 
 @media screen and (max-width: 800px) {
