@@ -37,8 +37,8 @@
       {{ T "tagCounter" $length }}
       {{- end }}
     </div>
-    <div class="terms-tags">
-      {{- range $key, $value := $terms }}
+    <div class="terms-tag-container">
+      {{ range $key, $value := $terms }}
       <div class="episode-tag" title="{{ $value.Term }}">
         <div class="tag-icon hashtag-icon">
           <i class="fas fa-hashtag"></i>
@@ -50,7 +50,7 @@
           </a>
         </span>
       </div>
-      {{ end -}}
+      {{ end }}
     </div>
     {{- end }}
   </div>
