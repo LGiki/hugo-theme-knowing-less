@@ -513,8 +513,7 @@ footer {
 }
 
 .archive-month {
-    /* color: var(--color-episode-title); */
-    color: var(--color-gary-500);
+    color: var(--color-archive-month);
     transition: 0.3s color ease-in-out;
     font-weight: 500;
 }
