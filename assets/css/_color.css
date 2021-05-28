@@ -115,6 +115,8 @@
     --color-episode-footer-hover: var(--color-blue-400);
     --color-border-secondary: #eaecef;
     --color-archive-episode-border-left: var(--color-gary-200);
+    --color-wechat-qrcode-text: var(--color-black);
+    --color-wechat-qrcode-background: var(--color-white);
 }
 
 :root[data-theme="dark"] {
@@ -147,4 +149,6 @@
     --color-episode-footer-hover: var(--color-blue-300);
     --color-border-secondary: var(--color-gary-600);
     --color-archive-episode-border-left: var(--color-gary-500);
+    --color-wechat-qrcode-text: var(--color-gary-200);
+    --color-wechat-qrcode-background: var(--color-gary-600);
 }
