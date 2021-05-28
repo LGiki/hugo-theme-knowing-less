@@ -6,6 +6,7 @@ draft: true
 keywords: []
 tags: []
 categories: []
+summary: ""
 description: ""
 coverImage: ""
 enclosureSrc: ""
