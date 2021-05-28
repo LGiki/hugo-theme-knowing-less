@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <a class="podcast-logo" href="{{ " /" | relLangURL }}">
+  <a class="podcast-logo" href="{{ "/" | relLangURL }}">
     <img src="{{ .Site.Params.podcastImage }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
   </a>
   <h1 class="podcast-title">{{ .Site.Title }}</h1>
@@ -10,6 +10,16 @@
       {{ .Site.Params.description | safeHTML }}
     {{- end -}}
   </h2>
+  {{ if .Site.Menus.main }}
+    <div class="menu-link-container">
+      {{ range $index, $element := .Site.Menus.main -}}
+        {{- if ne $index 0 -}}
+          <span>/<span>
+        {{- end -}}
+        <a href="{{ .URL | safeURL }}">{{- $element.Name -}}</a>
+      {{- end }}
+    </div>
+  {{ end }}
   <div class="podcast-link-container">
     {{- range .Site.Params.links -}}
       {{- if .link -}}

@@ -117,6 +117,8 @@
     --color-archive-episode-border-left: var(--color-gary-200);
     --color-wechat-qrcode-text: var(--color-black);
     --color-wechat-qrcode-background: var(--color-white);
+    --color-menu-link: var(--color-gary-600);
+    --color-menu-link-hover: var(--color-gary-400);
     --color-archive-month: var(--color-gary-500);
 }
 
@@ -152,5 +154,7 @@
     --color-archive-episode-border-left: var(--color-gary-500);
     --color-wechat-qrcode-text: var(--color-gary-200);
     --color-wechat-qrcode-background: var(--color-gary-600);
+    --color-menu-link: var(--color-gary-400);
+    --color-menu-link-hover: var(--color-gary-200);
     --color-archive-month: var(--color-gary-300);
 }

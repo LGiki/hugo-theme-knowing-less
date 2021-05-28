@@ -55,7 +55,7 @@ a {
 
 .podcast-title {
     color: var(--color-podcast-title);
-    margin: 8px 0;
+    margin: 3px 0;
     transition: color 0.3s ease-in-out;
 }
 
@@ -64,7 +64,7 @@ a {
     line-height: 1.3;
     font-weight: 500;
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -566,6 +566,25 @@ footer {
     color: var(--color-wechat-qrcode-text);
 }
 
+.menu-link-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.menu-link-container a, .menu-link-container span {
+    color: var(--color-menu-link);
+    font-size: 1.2rem;
+}
+
+.menu-link-container span {
+    margin: 0 5px;
+}
+
+.menu-link-container a:hover {
+    color: var(--color-menu-link-hover);
+}
+
 @media screen and (max-width: 800px) {
     .main-container {
         display: block;
@@ -599,6 +618,10 @@ footer {
 
     .episode-nav-mobile {
         display: unset;
+    }
+
+    .menu-link-container{
+        justify-content: center;
     }
 }
 
