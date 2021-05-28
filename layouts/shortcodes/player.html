@@ -1,0 +1,33 @@
+{{ $title := index .Params 0 }}
+{{ $author := index .Params 1 }}
+{{ $coverURL := index .Params 2 }}
+{{ $enclosureSrc := index .Params 3 }}
+
+{{ $playerId := strings.Replace $title " " "" -1 }}
+{{ $playerId := strings.Replace $playerId "." "" -1 }}
+{{ $playerId := strings.Replace $playerId ">" "" -1 }}
+{{ $playerId := strings.Replace $playerId "<" "" -1 }}
+{{ $playerId := strings.Replace $playerId "#" "" -1 }}
+{{ $playerId := strings.Replace $playerId "," "" -1 }}
+{{ $playerId := strings.Replace $playerId "+" "" -1 }}
+{{ $playerId := strings.Replace $playerId "~" "" -1 }}
+{{ $playerId := strings.Replace $playerId "[" "" -1 }}
+{{ $playerId := strings.Replace $playerId "]" "" -1 }}
+{{ $playerId := strings.Replace $playerId ":" "" -1 }}
+
+<div id="episode-player-{{ $playerId }}"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const player = new Shikwasa({
+      container: () => document.querySelector('#episode-player-{{ $playerId }}'),
+      audio: {
+        title: '{{ $title }}',
+        artist: '{{ $author }}',
+        cover: '{{ $coverURL }}',
+        src: '{{ $enclosureSrc }}',
+        preload: 'metadata'
+      },
+      speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
+    });
+  });
+</script>
