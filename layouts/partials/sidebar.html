@@ -21,6 +21,13 @@
     </div>
   {{ end }}
   <div class="podcast-link-container">
+    <div class="podcast-link">
+      {{ if .Site.Params.podcastRSS }}
+        <a href="{{ .Site.Params.podcastRSS }}"><i class="link-icon fas fa-rss"></i>RSS</a>
+      {{ else }}
+        <a href="{{ .Site.RSSLink }}"><i class="link-icon fas fa-rss"></i>RSS</a>
+      {{ end }}
+    </div>
     {{- range .Site.Params.links -}}
       {{- if .link -}}
         <div class="podcast-link">

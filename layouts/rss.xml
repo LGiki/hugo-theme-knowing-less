@@ -1,0 +1,101 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}
+  {{ $pctx = .Site }}
+{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+  {{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+  {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $pages = $pctx.Pages -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+  {{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    {{ printf "<title><![CDATA[%s]]></title>" .Site.Title | safeHTML }}
+    <link>{{ .Permalink }}</link>
+    <description>
+      {{ if .Site.Params.description -}}
+        {{ printf "<![CDATA[%s]]>" .Site.Params.description | safeHTML }}
+      {{- else -}}
+        {{ printf "<![CDATA[%s]]>" .Site.Title | safeHTML }}
+      {{- end }}
+    </description>
+    <generator>Hugo {{ .Site.Hugo.Version }} with theme Knowing Less</generator>
+    {{ with .Site.LanguageCode -}}
+      <language>{{.}}</language>
+    {{- end }}
+    {{ with .Site.Copyright -}}
+      <copyright>{{- printf "<![CDATA[%s]]>" (strings.Replace (strings.Replace . "\n" "" -1) "\r" "" -1) | safeHTML }}</copyright>
+    {{- end }}
+    {{ printf "<itunes:author><![CDATA[%s]]></itunes:author>" .Site.Author.name | safeHTML }}
+    {{ printf "<itunes:subtitle><![CDATA[%s]]></itunes:subtitle>" .Site.Title | safeHTML }}
+    <itunes:summary>
+      {{- if .Site.Params.description -}}
+        {{ printf "<![CDATA[%s]]>" .Site.Params.description | safeHTML }}
+      {{- else -}}
+        {{ printf "<![CDATA[%s]]>" .Site.Title | safeHTML }}
+      {{- end -}}
+    </itunes:summary>
+    <itunes:owner>
+      {{ printf "<itunes:name><![CDATA[%s]]></itunes:name>" .Site.Author.name | safeHTML }}
+      {{ if .Site.Author.email -}}
+        {{ printf "<itunes:email><![CDATA[%s]]></itunes:email>" .Site.Author.email | safeHTML }}
+      {{- end }}
+    </itunes:owner>
+    <itunes:image href="{{ .Site.Params.podcastImage }}"/>
+    {{ range .Site.Params.podcastCategory -}}
+      <itunes:category text="{{ .title }}">
+        {{ if .subTitle -}}
+        <itunes:category text="{{ .subTitle }}"/>
+        {{- end }}
+      </itunes:category>
+    {{- end }}
+    <itunes:explicit>false</itunes:explicit>
+    {{ if not .Date.IsZero -}}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{ with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{ range $pages }}
+    {{- if ne .Params.hiddenFromRSS true }}
+    <item>
+      {{ printf "<title><![CDATA[%s]]></title>" .Title | safeHTML }}
+      {{ printf "<itunes:author><![CDATA[%s]]></itunes:author>" .Site.Author.name | safeHTML }}
+      {{ printf "<itunes:subtitle><![CDATA[%s]]></itunes:subtitle>" .Title | safeHTML -}}
+      {{ if .Params.coverImage -}}
+      <itunes:image href="{{ .Params.coverImage }}"></itunes:image>
+      {{ else }}
+      <itunes:image href="{{ .Site.Params.podcastImage }}"></itunes:image>
+      {{- end -}}
+      <enclosure
+        url="{{ .Params.enclosureURL }}"
+        type="{{ .Params.enclosureType }}"
+        length="{{ .Params.enclosureLength }}"
+      />
+      <link>{{ .Permalink }}</link>
+      {{ if .Params.duration -}}
+      {{ $durationType := printf "%T" .Params.duration }}
+      {{- if eq $durationType "string" -}}
+      <itunes:duration>{{ .Params.duration }}</itunes:duration>
+      {{ else }}
+      {{ $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) }}
+      {{ $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) }}
+      {{ $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
+      <itunes:duration>{{ $hour }}:{{ $minute }}:{{ $second }}</itunes:duration>
+      {{- end -}}
+      {{- end -}}
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>
+        {{ printf "<![CDATA[%s]]>" (strings.Replace (strings.Replace .Content "\n" "" -1) "\r" "" -1) | safeHTML }}
+      </description>
+    </item>
+    {{- end -}}
+    {{ end }}
+  </channel>
+</rss>

@@ -9,8 +9,11 @@ categories: []
 summary: ""
 description: ""
 coverImage: ""
-enclosureSrc: ""
+enclosureURL: ""
+enclosureType: ""
+enclosureLength: ""
 author: ""
 duration: 0
 hiddenFromHomePage: false
+hiddenFromRSS: false
 ---

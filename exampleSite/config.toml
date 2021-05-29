@@ -10,6 +10,12 @@ hasCJKLanguage = true
 
 [author]                  # essential                     # 必需
   name = "LGiki"
+  email = ""
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
   name = "Episodes"
@@ -31,6 +37,8 @@ hasCJKLanguage = true
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
   podcastImage = "https://picsum.photos/500/500"
+
+  podcastRSS = ""
 
   since = "2021"            # Site creation time          # 站点建立时间
 
@@ -55,11 +63,6 @@ hasCJKLanguage = true
   # WeChat Official Code QR Code Image
   weChatQRCode = ""
 
-  [[params.links]]
-    title = "RSS"
-    fontAwesomeIcon = "fas fa-rss"
-    link = "#"
-    svg = ""
   [[params.links]]
     title = "Apple Podcast"
     fontAwesomeIcon = "fas fa-podcast"
