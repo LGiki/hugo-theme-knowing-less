@@ -13,11 +13,13 @@
       {{- end }}
 
       <div class="archive-episode-container">
-        {{ if .Params.coverImage -}}
-        <img class="archive-episode-cover" src="{{ .Params.coverImage }}">
-        {{ else }}
-        <img class="archive-episode-cover" src="{{ .Site.Params.podcastImage }}">
-        {{- end }}
+        <div class="archive-episode-cover-container">
+          {{ if .Params.coverImage -}}
+            <img class="archive-episode-cover" src="{{ .Params.coverImage }}">
+          {{ else }}
+            <img class="archive-episode-cover" src="{{ .Site.Params.podcastImage }}">
+          {{- end }}
+        </div>
         <div class="archive-episode-info">
           <span class="archive-episode-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
           <div class="archive-episode-tag">

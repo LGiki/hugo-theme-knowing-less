@@ -472,6 +472,12 @@ footer p {
     margin-bottom: 10px;
 }
 
+.archive-episode-cover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #light-gallery-div img {
     cursor: zoom-in;
 }
@@ -514,6 +520,7 @@ footer p {
 .archive-episode-tag {
     display: flex;
     flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .archive-month {
@@ -674,5 +681,9 @@ footer p {
         margin: 0;
         width: 100%;
         height: auto;
+    }
+
+    .archive-episode-title {
+        font-size: 1.2rem;
     }
 }
