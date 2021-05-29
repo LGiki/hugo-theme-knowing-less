@@ -39,3 +39,9 @@ categoryCounter:
 
 zeroCategoryCounter:
   other: "暂无分类"
+
+weChatOfficialAccount:
+  other: "公众号"
+
+scanQRCodeUsingWeChat:
+  other: "微信扫描二维码"

@@ -39,3 +39,9 @@ categoryCounter:
 
 zeroCategoryCounter:
   other: "No categories"
+
+weChatOfficialAccount:
+  other: "WeChat"
+
+scanQRCodeUsingWeChat:
+  other: "Scan QR code using WeChat"

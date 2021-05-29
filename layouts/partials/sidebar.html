@@ -38,12 +38,12 @@
         <div class="podcast-link wechat-qrcode-link">
           <a>
             <i class="link-icon fab fa-weixin"></i>
-            公众号
+            {{ T "weChatOfficialAccount" }}
           </a>
         </div>
         <div class="wechat-qrcode">
           <img src="{{ . }}" />
-          <span>微信扫描二维码</span>
+          <span>{{ T "scanQRCodeUsingWeChat" }}</span>
         </div>
       </div>
     {{ end }}
