@@ -1,2 +1,9 @@
-<p>Powered by Hugo</p>
-<p>Made with <i class="heart fas fa-heart"></i> by LGiki</p>
+<p>Powered by <a class="footer-link" href="https://gohugo.io/" target="_blank">Hugo</a> | Theme <a class="footer-link" href="https://github.com/LGiki/hugo-theme-knowing-less" target="_blank">Knowing Less</a></p>
+<p>
+{{- $current := now.Format "2006" }}
+&copy; 
+{{ if ne .Site.Params.since $current -}}
+  {{ .Site.Params.since }} - 
+{{ end }}
+{{- $current -}}
+<i class="heart fas fa-heart"></i><span>{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</span></p>

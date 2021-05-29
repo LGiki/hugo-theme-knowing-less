@@ -102,7 +102,7 @@
     --color-pagination-hover-background: var(--color-blue-100);
     --color-pagination-active-text: var(--color-white);
     --color-pagination-active-background: var(--color-blue-500);
-    --color-footer-text: var(--color-gary-700);
+    --color-footer-text: var(--color-gary-500);
     --color-duration-icon-background: var(--color-pink-400);
     --color-podcast-link: var(--color-black);
     --color-episode-container: var(--color-white);
@@ -120,6 +120,7 @@
     --color-menu-link: var(--color-gary-600);
     --color-menu-link-hover: var(--color-gary-400);
     --color-archive-month: var(--color-gary-500);
+    --color-footer-link: var(--color-blue-600);
 }
 
 :root[data-theme="dark"] {
@@ -157,4 +158,5 @@
     --color-menu-link: var(--color-gary-400);
     --color-menu-link-hover: var(--color-gary-200);
     --color-archive-month: var(--color-gary-300);
+    --color-footer-link: var(--color-blue-400);
 }

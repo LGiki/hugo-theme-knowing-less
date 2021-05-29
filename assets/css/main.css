@@ -262,8 +262,11 @@ footer {
     flex-direction: column;
     line-height: 1.5;
     align-items: center;
-    color: var(--color-footer-text);
     transition: color 0.3s ease-in-out;
+}
+
+footer p {
+    color: var(--color-footer-text);
 }
 
 @keyframes heart-animate {
@@ -290,6 +293,7 @@ footer {
 .heart {
     color: #05488c;
     animation: heart-animate 1.33s ease-in-out infinite;
+    margin: 0 5px;
 }
 
 .float-button-container {
@@ -585,6 +589,10 @@ footer {
     color: var(--color-menu-link-hover);
 }
 
+.footer-link {
+    color: var(--color-footer-link);
+}
+
 @media screen and (max-width: 800px) {
     .main-container {
         display: block;
@@ -605,7 +613,7 @@ footer {
     }
 
     .main-content-container {
-        padding: 10px;
+        padding: 10px 10px 20px 10px;
     }
 
     .episode-container {
