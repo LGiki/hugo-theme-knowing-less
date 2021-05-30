@@ -90,64 +90,64 @@ copyright = ""            # Default value is author.name
   [[params.links]]
     title = "Apple Podcast"
     fontAwesomeIcon = "fas fa-podcast"
-    link = "#"
+    link = ""
     svg = ""
   [[params.links]]
     title = "Google Podcast"
     fontAwesomeIcon = "fab fa-google"
-    link = "#"
+    link = ""
     svg = ""
   [[params.links]]
     title = "Pocket Casts"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/pocketcasts.svg"
   [[params.links]]
     title = "Overcast"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/overcast.svg"
   [[params.links]]
     title = "Castro"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/castro.svg"
   [[params.links]]
     title = "小宇宙"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/cosmos.svg"
   [[params.links]]
     title = "喜马拉雅"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/ximalaya.svg"
   [[params.links]]
     title = "网易云"
     fontAwesomeIcon = ""
-    link = "#"
+    link = ""
     svg = "/icons/netease.svg"
   [[params.links]]
     title = "汽水儿"
     fontAwesomeIcon = "fas fa-headphones-alt"
-    link = "#"
+    link = ""
     svg = ""
   [[params.links]]
     title = "皮艇"
     fontAwesomeIcon = "fas fa-headphones-alt"
-    link = "#"
-    svg = ""
-  [[params.links]]
-    title = "Email"
-    fontAwesomeIcon = "fas fa-envelope"
-    link = "#"
+    link = ""
     svg = ""
   [[params.links]]
     title = "微博"
     fontAwesomeIcon = "fab fa-weibo"
-    link = "#"
+    link = ""
     svg = ""
-  
+  [[params.links]]
+    title = "Email"
+    fontAwesomeIcon = "fas fa-envelope"
+    link = ""
+    svg = ""
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
