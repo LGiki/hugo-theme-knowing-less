@@ -62,7 +62,7 @@
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
     {{ range $pages }}
-    {{- if ne .Params.hiddenFromRSS true }}
+    {{- if and (ne .Params.hiddenFromRSS true) (ne .Params.draft true) }}
     <item>
       {{ printf "<title><![CDATA[%s]]></title>" .Title | safeHTML }}
       {{ printf "<itunes:author><![CDATA[%s]]></itunes:author>" .Site.Author.name | safeHTML }}
