@@ -1,23 +1,27 @@
 baseURL = "http://localhost:1313/"
 languageCode = "en"
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "en" # en / zh-cn / zh-tw / ... (This field determines which i18n file to use)
 title = "Knowing Less"
 theme = "knowing-less"
-paginate = 5
-enableEmoji = true
-summaryLength = 200
+paginate = 5              # How many episodes per page
+enableEmoji = true        # Enable Emoji emoticons support for page content
+summaryLength = 200       # The length (number of words) of shownote text displayed on the home page
 hasCJKLanguage = true
+copyright = ""            # Default value is author.name
 
-[author]                  # essential                     # 必需
+# Essential
+[author]
   name = "LGiki"
   email = ""
 
-[sitemap]                 # essential                     # 必需
+# Essential
+[sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
-[[menu.main]]             # config your menu              # 配置目录
+# Config menus displayed in the sidebar
+[[menu.main]]
   name = "Episodes"
   weight = 20
   identifier = "episodes"
@@ -34,35 +38,55 @@ hasCJKLanguage = true
   url = "/categories/"
 
 [params]
-  debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+  # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+  debug = false
 
+  # Podcast image URL
   podcastImage = "https://picsum.photos/500/500"
 
+  # If you leave it blank, will generate RSS Feed automatically by episodes you posted, or you can specify your podcast RSS feed URL
   podcastRSS = ""
 
-  since = "2021"            # Site creation time          # 站点建立时间
+  # Site creation time
+  since = "2021"
 
   description = "A Simple HUGO theme for podcasts"
-  keywords = ["podcast"]
+  keywords = ["Hugo", "theme", "podcast"]
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
 
-  baiduVerification = ""   # Baidu Verification
-  googleVerification = ""  # Google Verification         # 谷歌
+  # Baidu Verification
+  baiduVerification = ""
+  # Google Verification
+  googleVerification = ""
 
-  # Link custom CSS and JS assets
-  #   (relative to /static/css and /static/js respectively)
+  # Link custom CSS and JS assets (relative to /static/css and /static/js respectively)
   customCSS = []
   customJS = []
 
-  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
+  # Paginate of archives, tags and categories
   archivePaginate = 20
-  showArchiveCount = true
   
-  # WeChat Official Code QR Code Image
+  # WeChat Official Account QR Code Image URL
   weChatQRCode = ""
 
+  # Podcast category
+  [[params.podcastCategory]]
+    title = "Society & Culture"
+    subTitle = "Personal Journals"
+  [[params.podcastCategory]]
+    title = "Society & Culture"
+    subTitle = "Relationships"
+  [[params.podcastCategory]]
+    title = "Society & Culture"
+    subTitle = "Documentary"
+
+  # Podcast realated links displayed in the sidebar
+  # If leave link field blank, the link will not displayed in the sidebar
+  # Specify icon by fontAwesome or svg field:
+  # If using fontAwesome simply fill the fontAwesome field with class name of icon
+  # If using svg, you need put your svg icon to /static/icons/, then specify the svg field
   [[params.links]]
     title = "Apple Podcast"
     fontAwesomeIcon = "fas fa-podcast"
