@@ -2,17 +2,7 @@
 {{- if .IsHome -}}
   {{ $pctx = .Site }}
 {{- end -}}
-{{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
-  {{- $pages = $pctx.RegularPages -}}
-{{- else -}}
-  {{- $pages = $pctx.Pages -}}
-{{- end -}}
-{{- $pages = $pctx.Pages -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-  {{- $pages = $pages | first $limit -}}
-{{- end -}}
+{{- $pages := $pctx.RegularPages -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -78,14 +68,14 @@
         length="{{ .Params.enclosureLength }}"
       />
       <link>{{ .Permalink }}</link>
-      {{ if .Params.duration -}}
-      {{ $durationType := printf "%T" .Params.duration }}
-      {{- if eq $durationType "string" -}}
+      {{- if .Params.duration -}}
+      {{- $durationType := printf "%T" .Params.duration -}}
+      {{- if eq $durationType "string" }}
       <itunes:duration>{{ .Params.duration }}</itunes:duration>
-      {{ else }}
-      {{ $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) }}
-      {{ $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) }}
-      {{ $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
+      {{- else -}}
+      {{- $hour := printf "%02d" (int (math.Floor (div .Params.duration 3600))) -}}
+      {{- $minute := printf "%02d" (int (math.Floor (mod (div .Params.duration 60) 60))) -}}
+      {{- $second := printf "%02d" (int (math.Floor (mod .Params.duration 60))) }}
       <itunes:duration>{{ $hour }}:{{ $minute }}:{{ $second }}</itunes:duration>
       {{- end -}}
       {{- end -}}
