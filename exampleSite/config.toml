@@ -82,7 +82,7 @@ copyright = ""            # Default value is author.name
     title = "Society & Culture"
     subTitle = "Documentary"
 
-  # Podcast realated links displayed in the sidebar
+  # Podcast related links displayed in the sidebar
   # If leave link field blank, the link will not displayed in the sidebar
   # Specify icon by fontAwesome or svg field:
   # If using fontAwesome simply fill the fontAwesome field with class name of icon
