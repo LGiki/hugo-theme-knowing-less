@@ -393,7 +393,7 @@ footer p {
 .markdown-content h5,
 .markdown-content h6,
 .markdown-content li,
-.markdown-content span {
+.markdown-content > span {
     color: var(--color-episode-content-text) !important;
     transition: color 0.3s ease-in-out;
 }
@@ -584,7 +584,8 @@ footer p {
     margin-bottom: 5px;
 }
 
-.menu-link-container a, .menu-link-container span {
+.menu-link-container a,
+.menu-link-container span {
     color: var(--color-menu-link);
     font-size: 1.2rem;
 }
@@ -636,7 +637,7 @@ footer p {
         display: unset;
     }
 
-    .menu-link-container{
+    .menu-link-container {
         justify-content: center;
     }
 }

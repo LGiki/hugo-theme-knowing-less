@@ -56,6 +56,10 @@ copyright = ""            # Default value is author.name
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
 
+  # Syntax highlighting by highlight.js
+  # When set highlightInClient to false, please uncomment the [markup.highlight] section below
+  highlightInClient = false
+
   # Baidu Verification
   baiduVerification = ""
   # Google Verification
@@ -149,6 +153,19 @@ copyright = ""            # Default value is author.name
     svg = ""
 
 [markup]
+  # Highlight code using HUGO built-in Chroma
+  # [markup.highlight]
+  #   anchorLineNos = true
+  #   codeFences = true
+  #   guessSyntax = true
+  #   hl_Lines = ""
+  #   lineAnchors = ""
+  #   lineNoStart = 1
+  #   lineNos = true
+  #   lineNumbersInTable = false
+  #   noClasses = true
+  #   style = "dracula"
+  #   tabWidth = 4
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
