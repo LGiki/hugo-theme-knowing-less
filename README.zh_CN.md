@@ -1,6 +1,6 @@
 # HUGO Theme Knowing Less
 
-[![GitHub license](https://img.shields.io/github/license/LGiki/hugo-theme-knowing-less?style=flat-square)](https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE)![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/lgiki/hugo-theme-knowing-less?include_prereleases&style=flat-square)
+[![GitHub license](https://img.shields.io/github/license/LGiki/hugo-theme-knowing-less?style=flat-square)](https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/lgiki/hugo-theme-knowing-less?include_prereleases&style=flat-square)
 
 Knowing Less是一款为播客设计的HUGO主题。
 
@@ -221,7 +221,6 @@ hiddenFromRSS: false
 - `hiddenFromRSS`
 
   如果将这个字段设置为`true`，这个单集将不会出现在RSS中。
-  
 
 # Shortcodes
 
