@@ -19,9 +19,6 @@ prevEpisode:
 nextEpisode:
   other: "Next"
 
-unknownDuration:
-  other: "Unknown"
-
 archiveCounter:
   one: "{{ .Count }} Episode In Total"
   other: "{{ .Count }} Episodes In Total"

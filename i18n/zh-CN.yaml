@@ -19,9 +19,6 @@ prevEpisode:
 nextEpisode:
   other: "下一期"
 
-unknownDuration:
-  other: "未知"
-
 archiveCounter:
   one: "共计 {{ .Count }} 期节目"
   other: "共计 {{ .Count }} 期节目"

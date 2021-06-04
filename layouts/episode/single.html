@@ -10,11 +10,11 @@
           </div>
           <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
         </div>
-        <div class="episode-tag">
-          <div class="tag-icon duration-icon">
-            <i class="fas fa-microphone"></i>
-          </div>
-          {{ if .Params.duration }}
+        {{ if .Params.duration }}
+          <div class="episode-tag">
+            <div class="tag-icon duration-icon">
+              <i class="fas fa-microphone"></i>
+            </div>
             {{ $durationType := printf "%T" .Params.duration }}
             {{ if eq $durationType "string" }}
               <span>{{ .Params.duration }}</span>
@@ -28,10 +28,8 @@
                 <span>{{ $hour }}:{{ $minute }}:{{ $second }}</span>
               {{ end }}
             {{ end }}
-          {{ else }}
-            <span>{{ T "unknownDuration" }}</span>
-          {{ end }}
-        </div>
+          </div>
+        {{ end }}
         {{ with .Params.categories -}}
         {{ range . -}}
         <div class="episode-tag" title="{{ . }}">
