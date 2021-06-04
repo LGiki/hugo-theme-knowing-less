@@ -202,11 +202,14 @@ img.link-icon[data-theme="dark"] {
 .episode-title {
     font-size: 1.95rem;
     color: var(--color-episode-title);
-    transition: color 0.3s ease-in-out;
-    /* margin: 5px 0; */
 }
 
-.episode-title:hover {
+.episode-title a {
+    color: var(--color-episode-title);
+    transition: color 0.3s ease-in-out;
+}
+
+.episode-title:hover>a {
     color: var(--color-episode-title-hover);
 }
 

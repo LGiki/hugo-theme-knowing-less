@@ -1,9 +1,7 @@
 <div class="episode-item">
   <div class="episode-info">
     <div>
-      <a href="{{ .RelPermalink }}">
-        <h1 class="episode-title">{{ .Title }}</h1>
-      </a>
+      <h1 class="episode-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
     </div>
     <div class="episode-extra-info">
       <div class="episode-tag" title="{{ .Date.Format "2006-01-02 15:02:01" }}">
