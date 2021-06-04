@@ -4,7 +4,7 @@
 {{- $paginator := .Paginate .Data.Pages .Site.Params.archivePaginate -}}
 <div class="main-content-container">
   <div class="episode-container">
-    <div class="archive-container" id="light-gallery-div">
+    <div class="archive-container">
       {{ if not $paginator.HasPrev -}}
       <h1 class="episode-title">{{ .Title }}</h1>
       {{- end }}
@@ -81,12 +81,4 @@
     {{- end }}
   </div>
 </div>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    lightGallery(document.getElementById('light-gallery-div'), {
-      selector: 'img',
-      plugins: [lgZoom, lgRotate],
-    });
-  });
-</script>
 {{ end }}

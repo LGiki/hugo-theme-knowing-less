@@ -51,9 +51,11 @@
         <div class="episode-player"></div>
       {{ end }}
     </div>
-    <div class="episode-content markdown-content" id="light-gallery-div">
+    <div class="episode-content markdown-content">
       {{ with .Params.coverImage -}}
-      <img class="episode-content-cover" src="{{ . }}">
+      <a href="{{ . }}">
+        <img class="episode-content-cover" src="{{ . }}">
+      </a>
       {{- end }}
       {{ .Content }}
     </div>
@@ -98,10 +100,6 @@
         speedOptions: [0.5, 0.75, 1.25, 1.5, 2],
       });
     {{ end }}
-    lightGallery(document.getElementById('light-gallery-div'), {
-      selector: 'img',
-      plugins: [lgZoom, lgRotate],
-    });
   });
 </script>
 {{ end }}

@@ -479,10 +479,6 @@ footer p {
     align-items: center;
 }
 
-#light-gallery-div img {
-    cursor: zoom-in;
-}
-
 .archive-episode-container {
     display: flex;
     margin: 10px 0;

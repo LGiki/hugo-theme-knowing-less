@@ -4,7 +4,7 @@
 {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse .Site.Params.archivePaginate }}
 <div class="main-content-container">
   <div class="episode-container">
-    <div class="archive-container" id="light-gallery-div">
+    <div class="archive-container">
       {{- range $index, $element := $paginator.Pages -}}
       {{- $thisMonth := $element.Date.Format "2006.01" }}
       {{- $lastElement := $index | add -1 | index $paginator.Pages }}
@@ -84,12 +84,4 @@
     {{- end }}
   </div>
 </div>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    lightGallery(document.getElementById('light-gallery-div'), {
-      selector: 'img',
-      plugins: [lgZoom, lgRotate],
-    });
-  });
-</script>
 {{- end }}

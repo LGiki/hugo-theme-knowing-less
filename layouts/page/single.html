@@ -4,17 +4,9 @@
 <div class="main-content-container">
   <div class="episode-container">
     <h1 class="episode-title">{{ .Title }}</h1>
-    <div class="episode-content markdown-content" id="light-gallery-div">
+    <div class="episode-content markdown-content">
       {{ .Content }}
     </div>
   </div>
 </div>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    lightGallery(document.getElementById('light-gallery-div'), {
-      selector: 'img',
-      plugins: [lgZoom, lgRotate],
-    });
-  });
-</script>
 {{ end }}
