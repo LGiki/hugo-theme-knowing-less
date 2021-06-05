@@ -750,6 +750,7 @@
     display: block;
     width: 100%;
     overflow: auto;
+    color: var(--color-episode-content-text);
 }
 
 .markdown-content table th {
@@ -759,16 +760,21 @@
 .markdown-content table td,
 .markdown-content table th {
     padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+    border: 1px solid var(--color-markdown-table-border);
+    transition: border .3s ease-in-out;
 }
 
 .markdown-content table tr {
-    background-color: #fff;
-    border-top: 1px solid #c6cbd1;
+    /* background-color: #fff; */
+    background-color: var(--color-markdown-table-tr-background);
+    border-top: 1px solid var(--color-markdown-table-border-top);
+    transition: background-color .3s ease-in-out, border-top .3s ease-in-out;
 }
 
 .markdown-content table tr:nth-child(2n) {
-    background-color: #f6f8fa;
+    /* background-color: #f6f8fa; */
+    background-color: var(--color-markdown-table-tr-2n-background);
+    transition: background-color .3s ease-in-out;
 }
 
 .markdown-content img {

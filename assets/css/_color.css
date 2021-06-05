@@ -122,6 +122,10 @@
     --color-archive-month: var(--color-gary-500);
     --color-footer-link: var(--color-blue-600);
     --color-markdown-code-background: rgba(27, 31, 35, .05);
+    --color-markdown-table-tr-background: #fff;
+    --color-markdown-table-tr-2n-background: #f6f8fa;
+    --color-markdown-table-border: #dfe2e5;
+    --color-markdown-table-border-top: #c6cbd1;
 }
 
 :root[data-theme="dark"] {
@@ -161,4 +165,8 @@
     --color-archive-month: var(--color-gary-300);
     --color-footer-link: var(--color-blue-400);
     --color-markdown-code-background: rgba(27, 31, 35, .5);
+    --color-markdown-table-tr-background: var(--color-episode-container);
+    --color-markdown-table-tr-2n-background: var(--color-gary-800);
+    --color-markdown-table-border: var(--color-gary-600);
+    --color-markdown-table-border-top: var(--color-gary-600);
 }
