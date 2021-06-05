@@ -121,6 +121,7 @@
     --color-menu-link-hover: var(--color-gary-400);
     --color-archive-month: var(--color-gary-500);
     --color-footer-link: var(--color-blue-600);
+    --color-markdown-code-background: rgba(27, 31, 35, .05);
 }
 
 :root[data-theme="dark"] {
@@ -159,4 +160,5 @@
     --color-menu-link-hover: var(--color-gary-200);
     --color-archive-month: var(--color-gary-300);
     --color-footer-link: var(--color-blue-400);
+    --color-markdown-code-background: rgba(27, 31, 35, .5);
 }
