@@ -1,6 +1,6 @@
 {{ define "content" }}
   <div class="main-content-container">
-    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "episode") ".Params.hiddenfromhomepage" "!=" true) }}
+    {{- $paginator := .Paginate (where (where .Site.RegularPages "Type" "in" (slice "episode" "post")) ".Params.hiddenfromhomepage" "!=" true) }}
     {{- range $paginator.Pages -}}
       {{ .Render "summary" }}
     {{- end -}}

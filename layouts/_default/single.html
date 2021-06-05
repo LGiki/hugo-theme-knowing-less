@@ -1,7 +1,48 @@
-{{ define "content" -}}
+{{ define "content" }}
 <div class="main-content-container">
   <div class="episode-container">
-    {{ .Content }}
+    <div class="episode-info">
+      <h1 class="episode-title">{{ .Title }}</h1>
+      <div class="episode-extra-info">
+        <div class="episode-tag" title="{{ .Date.Format " 2006-01-02 15:02:01" }}">
+          <div class="tag-icon publish-date-icon">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+          <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
+        </div>
+        {{ with .Params.categories -}}
+        {{ range . -}}
+        <div class="episode-tag" title="{{ . }}">
+          <div class="tag-icon hashtag-icon">
+            <i class="fas fa-hashtag"></i>
+          </div>
+          <span>
+            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+              {{ . }}
+            </a>
+          </span>
+        </div>
+        {{ end -}}
+        {{- end }}
+      </div>
+    </div>
+    <div class="episode-content markdown-content">
+      {{ .Content }}
+    </div>
+  </div>
+  <div class="episode-footer">
+    {{ with .PrevInSection -}}
+    <div class="episode-nav-prev episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i
+          class="fas fa-chevron-left"></i>{{ .Title }}</a></div>
+    <div class="episode-nav-prev episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}"><i
+          class="fas fa-chevron-left"></i>{{ T "prevEpisode" }}</a></div>
+    {{- end }}
+    {{ with .NextInSection -}}
+    <div class="episode-nav-next episode-nav-default"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}<i
+          class="fas fa-chevron-right"></i></a></div>
+    <div class="episode-nav-next episode-nav-mobile"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ T
+        "nextEpisode" }}<i class="fas fa-chevron-right"></i></a></div>
+    {{- end }}
   </div>
 </div>
-{{- end }}
+{{ end }}
