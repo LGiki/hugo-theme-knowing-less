@@ -169,3 +169,8 @@ copyright = ""            # Default value is author.name
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
