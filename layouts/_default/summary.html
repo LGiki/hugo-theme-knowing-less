@@ -30,14 +30,14 @@
             {{ end }}
           </div>
         {{ end }}
-        {{ with .Params.categories -}}
+        {{ with .Params.tags -}}
         {{ range . -}}
         <div class="episode-tag" title="{{ . }}">
           <div class="tag-icon hashtag-icon">
             <i class="fas fa-hashtag"></i>
           </div>
           <span>
-            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+            <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}/">
             {{ . }}
             </a>
           </span>
