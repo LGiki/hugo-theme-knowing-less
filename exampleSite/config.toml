@@ -38,6 +38,9 @@ copyright = ""            # Default value is author.name
   url = "/categories/"
 
 [params]
+  # Used to check if the theme is configured correctly
+  version = "v1.1.0"
+
   # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
   debug = false
 

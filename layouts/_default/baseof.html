@@ -1,3 +1,6 @@
+{{ if not .Site.Params.version -}}
+  {{ errorf "\n\nYou haven't copied the example config.toml to the root folder of your Hugo site. See https://github.com/LGiki/hugo-theme-knowing-less#installation\n\n你没有把样例config.toml复制到Hugo站点根目录下，参考https://github.com/LGiki/hugo-theme-knowing-less#installation\n" -}}
+{{ end -}}
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
 <head>
