@@ -1,6 +1,6 @@
 # HUGO Theme Knowing Less
 
-[![GitHub license](https://img.shields.io/github/license/LGiki/hugo-theme-knowing-less?style=flat-square)](https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/lgiki/hugo-theme-knowing-less?include_prereleases&style=flat-square)
+[![GitHub license](https://img.shields.io/github/license/LGiki/hugo-theme-knowing-less?style=flat-square)](https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/lgiki/hugo-theme-knowing-less?include_prereleases&style=flat-square)](https://github.com/LGiki/hugo-theme-knowing-less/releases)
 
 The Knowing Less theme is a HUGO theme for podcasts.
 
