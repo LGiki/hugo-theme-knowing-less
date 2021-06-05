@@ -6,9 +6,9 @@ The Knowing Less theme is a HUGO theme for podcasts.
 
 [中文说明](README.zh_CN.md)
 
-# Screenshots
+# Screenshot
 
-![](images/screenshot.png)
+![](images/screenshot.webp)
 
 # Feature
 

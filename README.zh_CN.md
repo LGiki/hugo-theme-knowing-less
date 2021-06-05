@@ -8,7 +8,7 @@ Knowing Less是一款为播客设计的HUGO主题。
 
 # 截图
 
-![](images/screenshot.png)
+![](images/screenshot.webp)
 
 # 主题特性
 
