@@ -58,7 +58,7 @@ copyright = ""            # Default value is author.name
 
   # Syntax highlighting by highlight.js
   # When set highlightInClient to false, please uncomment the [markup.highlight] section below
-  highlightInClient = false
+  highlightInClient = true
 
   # Baidu Verification
   baiduVerification = ""
