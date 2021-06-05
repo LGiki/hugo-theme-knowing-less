@@ -12,7 +12,7 @@
     <div class="menu-link-container">
       {{ range $index, $element := .Site.Menus.main -}}
         {{- if ne $index 0 -}}
-          <span>/<span>
+          <span>/</span>
         {{- end -}}
         <a href="{{ .URL | safeURL }}">{{- $element.Name -}}</a>
       {{- end }}
