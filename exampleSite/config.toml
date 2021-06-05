@@ -53,7 +53,7 @@ copyright = ""            # Default value is author.name
   # Site creation time
   since = "2021"
 
-  description = "A Simple HUGO theme for podcasts"
+  description = "A simple HUGO theme for podcasts"
   keywords = ["Hugo", "theme", "podcast"]
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
