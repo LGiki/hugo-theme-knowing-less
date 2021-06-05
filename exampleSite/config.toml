@@ -63,6 +63,9 @@ copyright = ""            # Default value is author.name
   # When set highlightInClient to false, please uncomment the [markup.highlight] section below
   highlightInClient = true
 
+  # Enable KaTeX
+  katex = true
+
   # Baidu Verification
   baiduVerification = ""
   # Google Verification

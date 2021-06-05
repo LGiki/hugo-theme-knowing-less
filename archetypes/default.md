@@ -19,6 +19,7 @@ author: ""
 duration: 0
 hiddenFromHomePage: false
 hiddenFromRSS: false
+katex: false
 ---
 
 <!--more-->
