@@ -108,7 +108,7 @@ img.link-icon[data-theme="dark"] {
 }
 
 .episode-item {
-    min-height: 200px;
+    /* min-height: 200px; */
     margin: 0 0 20px;
     border-radius: 10px;
     display: flex;
