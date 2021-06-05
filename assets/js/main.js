@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('scroll', () => {
     let top = document.documentElement.scrollTop || document.body.scrollTop;
-    if (top > 300) {
+    if (top > 100) {
         document.querySelector('#back-to-top').className = 'float-button show';
     } else {
         document.querySelector('#back-to-top').className = 'float-button';
