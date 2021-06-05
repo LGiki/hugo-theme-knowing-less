@@ -3,13 +3,11 @@
     <img src="{{ .Site.Params.podcastImage }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}" />
   </a>
   <h1 class="podcast-title">{{ .Site.Title }}</h1>
-  <h2 class="podcast-description">
-    {{- if .Description -}}
-      {{ .Description | safeHTML }}
-    {{- else if .Site.Params.description -}}
-      {{ .Site.Params.description | safeHTML }}
-    {{- end -}}
-  </h2>
+  {{- if .Site.Params.description -}}
+    <h2 class="podcast-description">
+    {{ .Site.Params.description }}
+    </h2>
+  {{- end -}}
   {{ if .Site.Menus.main }}
     <div class="menu-link-container">
       {{ range $index, $element := .Site.Menus.main -}}
