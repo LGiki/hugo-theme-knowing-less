@@ -200,6 +200,7 @@ img.link-icon[data-theme="dark"] {
 }
 
 .episode-title {
+    font-size: 1.95rem;
     color: var(--color-episode-title);
 }
 
