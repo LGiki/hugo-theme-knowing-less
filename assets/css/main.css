@@ -103,7 +103,7 @@ img.link-icon[data-theme="dark"] {
 
 .main-content-container {
     flex-grow: 1;
-    padding: 20px 20px 10px 15px;
+    padding: 20px 20px 20px 15px;
     overflow: hidden;
 }
 
