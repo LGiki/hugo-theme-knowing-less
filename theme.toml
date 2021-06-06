@@ -6,8 +6,8 @@ license = "Apache-2.0"
 licenselink = "https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE"
 description = "A HUGO theme for podcasts"
 homepage = "https://github.com/LGiki/hugo-theme-knowing-less"
-tags = ["responsive", "podcast", "simple", "clean"]
-features = ["responsive", "podcast", "simple", "clean"]
+tags = ["responsive", "podcast", "simple", "clean", "blog", "syntax highlighting"]
+features = ["responsive", "podcast", "simple", "clean", "blog", "syntax highlighting"]
 min_version = "0.64.0"
 
 [author]
