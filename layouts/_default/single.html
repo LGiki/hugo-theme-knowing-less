@@ -10,14 +10,14 @@
           </div>
           <span>{{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
         </div>
-        {{ with .Params.categories -}}
+        {{ with .Params.tags -}}
         {{ range . -}}
         <div class="episode-tag" title="{{ . }}">
           <div class="tag-icon hashtag-icon">
             <i class="fas fa-hashtag"></i>
           </div>
           <span>
-            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/">
+            <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}/">
               {{ . }}
             </a>
           </span>
