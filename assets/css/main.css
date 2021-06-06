@@ -200,7 +200,6 @@ img.link-icon[data-theme="dark"] {
 }
 
 .episode-title {
-    font-size: 1.95rem;
     color: var(--color-episode-title);
 }
 
@@ -639,6 +638,14 @@ footer p {
     .menu-link-container {
         justify-content: center;
     }
+
+    .episode-title {
+        line-height: 100%;
+    }
+
+    .episode-extra-info {
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -654,11 +661,15 @@ footer p {
     }
 
     .episode-title a {
-        font-size: 0.75rem;
+        font-size: 1.75rem;
     }
 
-    .episode-title {
+    /* .episode-title {
         margin: 8px 0 !important;
+    } */
+
+    .episode-extra-info {
+        margin-top: 5px;
     }
 
     .float-button-container {
