@@ -32,8 +32,7 @@
           {{- if .fontAwesomeIcon -}}
           <a href="{{ .link }}"><i class="link-icon {{ .fontAwesomeIcon }}"></i>{{ .title }}</a>
           {{- else if .svg -}}
-          <a href="{{ .link }}"><img class="link-icon" src="{{ .svg }}" width="16" height="16" alt="{{ .title }}" />{{
-            .title }}</a>
+          <a href="{{ .link }}"><img class="link-icon" src="{{ .svg }}" width="16" height="16" alt="{{ .title }}" />{{.title }}</a>
           {{- end -}}
         </div>
       {{- end -}}
