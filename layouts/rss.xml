@@ -82,7 +82,7 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
       <description>
-        {{ printf "<![CDATA[%s]]>" (strings.Replace (strings.Replace .Content "\n" "" -1) "\r" "" -1) | safeHTML }}
+        {{ printf "<![CDATA[%s]]>" (strings.Replace (strings.Replace .Content "\n" "") "\r" "") | safeHTML }}
       </description>
     </item>
     {{- end -}}
