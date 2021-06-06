@@ -4,7 +4,7 @@
 
 Knowing Less是一款为播客设计的HUGO主题。
 
-[English Version](README.md)
+[English Version](https://github.com/LGiki/hugo-theme-knowing-less/blob/master/README.md)
 
 # 截图
 
