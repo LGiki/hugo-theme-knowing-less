@@ -8,7 +8,7 @@ The Knowing Less theme is a HUGO theme for podcasts.
 
 # Screenshot
 
-![](images/screenshot.webp)
+![](https://raw.githubusercontent.com/LGiki/hugo-theme-knowing-less/master/images/screenshot.webp)
 
 # Feature
 
