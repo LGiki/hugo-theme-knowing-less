@@ -3,7 +3,7 @@
 
 name = "Knowing Less"
 license = "Apache-2.0"
-licenselink = "https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE"
+licenselink = "https://github.com/LGiki/hugo-theme-knowing-less/blob/master/LICENSE.md"
 description = "A HUGO theme for podcasts"
 homepage = "https://github.com/LGiki/hugo-theme-knowing-less"
 tags = ["responsive", "podcast", "simple", "clean", "blog", "syntax highlighting"]
