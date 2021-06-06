@@ -126,6 +126,9 @@
     --color-markdown-table-tr-2n-background: #f6f8fa;
     --color-markdown-table-border: #dfe2e5;
     --color-markdown-table-border-top: #c6cbd1;
+    --color-markdown-kbd-color: #444d56;
+    --color-markdown-kbd-background-color: #fafbfc;
+    --color-markdown-kbd-border-color: #d1d5da;
 }
 
 :root[data-theme="dark"] {
@@ -169,4 +172,7 @@
     --color-markdown-table-tr-2n-background: var(--color-gary-800);
     --color-markdown-table-border: var(--color-gary-600);
     --color-markdown-table-border-top: var(--color-gary-600);
+    --color-markdown-kbd-color: var(--color-gary-400);
+    --color-markdown-kbd-background-color: var(--color-gary-700);
+    --color-markdown-kbd-border-color: var(--color-gary-500);
 }
