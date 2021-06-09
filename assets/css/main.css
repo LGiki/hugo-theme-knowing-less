@@ -601,7 +601,7 @@ footer p {
     color: var(--color-footer-link);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .main-container {
         display: block;
     }
