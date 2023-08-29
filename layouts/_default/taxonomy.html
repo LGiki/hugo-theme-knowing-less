@@ -70,11 +70,11 @@
 
   <div class="episode-footer">
     {{ with $paginator.Prev -}}
-    <div class="episode-nav-prev"><a href="{{ .URL }}"><i class="fas fa-chevron-left"></i>Prev</a>
+    <div class="episode-nav-prev"><a href="{{ .URL }}"><i class="fas fa-chevron-left"></i>{{ T "prevPage" }}</a>
     </div>
     {{- end }}
     {{ with $paginator.Next -}}
-    <div class="episode-nav-next"><a href="{{ .URL }}">Next<i class="fas fa-chevron-right"></i></a>
+    <div class="episode-nav-next"><a href="{{ .URL }}">{{ T "nextPage" }}<i class="fas fa-chevron-right"></i></a>
     </div>
     {{- end }}
   </div>
