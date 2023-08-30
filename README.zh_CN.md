@@ -23,22 +23,22 @@ Knowing Less是一款为播客设计的HUGO主题。
 
 将这个主题克隆到HUGO站点下的`themes/knowing-less`目录:
 
-```
-$ git clone https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
+```bash
+git clone https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
 ```
 
 如果你已经在HUGO根目录建立了一个git仓库，并且不想对这个主题做任何修改，你可以把这个主题作为一个submodule添加到HUGO站点下的`themes/knowing-less`目录：
 
-```
-$ git submodule add https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
+```bash
+git submodule add https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
 ```
 
 ## 复制站点配置文件
 
 将`exampleSite`文件夹下的[`config.toml`](exampleSIte/config.toml)文件复制到HUGO网站的根目录：
 
-```
-$ cp themes/knowing-less/exampleSite/config.toml config.toml
+```bash
+cp themes/knowing-less/exampleSite/config.toml config.toml
 ```
 
 ## 编辑站点配置文件
@@ -145,8 +145,8 @@ $ cp themes/knowing-less/exampleSite/config.toml config.toml
 
 创建新单集的时候，需要使用episode而不是posts：
 
-```
-$ hugo new episode/your-title-here.md
+```bash
+hugo new episode/your-title-here.md
 ```
 
 ## 更新主题
@@ -155,9 +155,9 @@ $ hugo new episode/your-title-here.md
 
 之后使用`git pull`来拉取最新的commits，如果这个过程中出现了冲突，请手动解决这些冲突：
 
-```
-$ cd ./themes/knowing-less
-$ git pull
+```bash
+cd ./themes/knowing-less
+git pull
 ```
 
 # Front Matter

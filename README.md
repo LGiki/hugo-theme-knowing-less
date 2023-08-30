@@ -23,22 +23,22 @@ The Knowing Less theme is a HUGO theme for podcasts.
 
 Clone it to `themes/knowing-less`:
 
-```
-$ git clone https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
+```bash
+git clone https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
 ```
 
 Or if you already have a git repo in your site folder and don't want to make any changes to this theme, you can add it as a submodule:
 
-```
-$ git submodule add https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
+```bash
+git submodule add https://github.com/LGiki/hugo-theme-knowing-less themes/knowing-less
 ```
 
 ## Copy Site Config
 
 Copy the [`config.toml`](exampleSIte/config.toml) file from `exampleSite` folder to the root folder of your Hugo site:
 
-```
-$ cp themes/knowing-less/exampleSite/config.toml config.toml
+```bash
+cp themes/knowing-less/exampleSite/config.toml hugo.toml
 ```
 
 Feel free to change it.
@@ -147,8 +147,8 @@ If your podcast already has an RSS feed link and you don't want to use the RSS f
 
 For this theme, you should use episode instead of posts:
 
-```
-$ hugo new episode/your-title-here.md
+```bash
+hugo new episode/your-title-here.md
 ```
 
 ## Update Theme
@@ -157,9 +157,9 @@ If you make any changes to this theme, please commit them first. You can only pu
 
 Then use `git pull` to get the newest commits, if there is a conflict, merge it manually:
 
-```
-$ cd ./themes/knowing-less
-$ git pull
+```bash
+cd ./themes/knowing-less
+git pull
 ```
 
 # Front Matter
