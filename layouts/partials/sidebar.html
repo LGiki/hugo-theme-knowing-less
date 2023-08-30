@@ -23,7 +23,9 @@
       {{ if .Site.Params.podcastRSS }}
         <a href="{{ .Site.Params.podcastRSS }}"><i class="link-icon fas fa-rss"></i>RSS</a>
       {{ else }}
-        <a href="{{ .Site.RSSLink }}"><i class="link-icon fas fa-rss"></i>RSS</a>
+        {{ with site.Home.OutputFormats.Get "rss" -}}
+          {{ printf `<a href="%s"><i class="link-icon fas fa-rss"></i>RSS</a>` .Permalink | safeHTML }}
+        {{ end -}}
       {{ end }}
     </div>
     {{- range .Site.Params.links -}}
