@@ -14,7 +14,7 @@ The Knowing Less theme is a HUGO theme for podcasts.
 
 - **Responsive**: Elegant responsive double column layout.
 - **Design for podcast**: Support generate podcast RSS feed from published episodes automatically and has many podcast related options.
-- **Multi-languages support**: currently `zh-CN`, `zh-TW` and `en`, PR welcome.
+- **Multi-languages support**: currently `zh-CN`, `zh-TW`, `en` and `de`, PR welcome.
 - **Dark mode support**
 
 # Installation
